@@ -1,46 +1,44 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { IoIosAddCircle } from "react-icons/io";
 
 function AddTodo({ handleOnClick }) {
-  let [todoname, settodoname] = useState();
-  let [tododate, settododate] = useState();
+  let todonameElement = useRef();
+  let tododateElement = useRef();
 
-  let handletodoname = (event) => {
-    settodoname(event.target.value);
-  };
-
-  let handletododate = (event) => {
-    settododate(event.target.value);
-  };
-
-  let handleaddbutton = () => {
+  let handleaddbutton = (event) => {
+    event.preventDefault();
+    let todoname = todonameElement.current.value;
+    let tododate = tododateElement.current.value;
     handleOnClick(todoname, tododate);
-    settodoname("");
-    settododate("");
+
+    todonameElement.current.value = "";
+    tododateElement.current.value = "";
   };
+
   return (
     <div class="container text-center">
-      <div class="row kg-row">
+      <form class="row kg-row" onSubmit={handleaddbutton}>
         <div class="col-6">
           <input
             type="text"
             placeholder="Enter Todo Here"
-            value={todoname}
-            onChange={handletodoname}></input>
+            ref={todonameElement}></input>
         </div>
 
         <div class="col-4">
-          <input type="date" value={tododate} onChange={handletododate}></input>
+          <input type="date" ref={tododateElement}></input>
         </div>
 
-        <div class="col-2">
+        <div class="col-2 ">
           <button
-            type="button "
+            type="submit"
             class="btn btn-success kg-button"
-            onClick={handleaddbutton}>
-            Add
+            // onClick={handleaddbutton}
+          >
+            <IoIosAddCircle />
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 }

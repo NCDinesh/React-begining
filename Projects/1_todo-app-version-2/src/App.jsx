@@ -9,9 +9,14 @@ import { useState } from "react";
 
 function App() {
   let handleOnClick = (todoname, tododate) => {
-    console.log(todoname, tododate);
-    let newtodoitem = [...todoitems, { name: todoname, date: tododate }];
-    settodoitems(newtodoitem);
+    // console.log(todoname, tododate);
+    // let newtodoitem = [...todoitems, { name: todoname, date: tododate }];
+    // settodoitems(newtodoitem);
+
+    settodoitems((currValue) => [
+      ...currValue,
+      { name: todoname, date: tododate },
+    ]);
   };
 
   let handledelete = (todoname) => {

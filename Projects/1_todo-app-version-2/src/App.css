@@ -9,10 +9,14 @@ input {
 }
 
 .kg-row {
-  margin:10px 5px ;
+margin:10px 5px ; 
+  display: flex;
+  align-items: center; 
+  /* justify-content: center;  */
 }
 
 .kg-button {
   min-width: 80px;
   
 }
+
