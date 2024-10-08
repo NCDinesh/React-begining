@@ -1,12 +1,13 @@
+import { useContext } from "react";
 import TodoItem from "./TodoItem";
-let TodoItems = ({ items, handledelete }) => {
+import { todoitemscontext } from "../store/todoitems-store";
+let TodoItems = () => {
+  let { todoitems } = useContext(todoitemscontext);
+
   return (
     <div class="container ">
-      {items.map((item) => (
-        <TodoItem
-          Todoname={item.name}
-          Tododate={item.date}
-          handledelete={handledelete}></TodoItem>
+      {todoitems.map((item) => (
+        <TodoItem Todoname={item.name} Tododate={item.date}></TodoItem>
       ))}
     </div>
   );
