@@ -1,13 +1,13 @@
 function TodoItem1() {
   return (
-    <div class="container ">
-      <div class="row kg-row">
-        <div class="col-6">Buy Milk</div>
+    <div className="container ">
+      <div className="row kg-row">
+        <div className="col-6">Buy Milk</div>
 
-        <div class="col-4">01/23/2025</div>
+        <div className="col-4">01/23/2025</div>
 
-        <div class="col-2">
-          <button type="button " class="btn btn-danger kg-button">
+        <div className="col-2">
+          <button type="button " className="btn btn-danger kg-button">
             Delete
           </button>
         </div>

@@ -5,7 +5,7 @@ let TodoItems = () => {
   let { todoitems } = useContext(todoitemscontext);
 
   return (
-    <div class="container ">
+    <div className="container ">
       {todoitems.map((item) => (
         <TodoItem Todoname={item.name} Tododate={item.date}></TodoItem>
       ))}

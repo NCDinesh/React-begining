@@ -5,16 +5,16 @@ import { todoitemscontext } from "../store/todoitems-store";
 let TodoItem = ({ Todoname, Tododate }) => {
   let { deleteitem } = useContext(todoitemscontext);
   return (
-    <div class="container ">
-      <div class="row kg-row">
-        <div class="col-6">{Todoname}</div>
+    <div className="container ">
+      <div className="row kg-row">
+        <div className="col-6">{Todoname}</div>
 
-        <div class="col-4">{Tododate}</div>
+        <div className="col-4">{Tododate}</div>
 
-        <div class="col-2">
+        <div className="col-2">
           <button
             type="button "
-            class="btn btn-danger kg-button"
+            className="btn btn-danger kg-button"
             onClick={() => deleteitem(Todoname)}>
             <MdDelete />
           </button>

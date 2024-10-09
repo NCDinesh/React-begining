@@ -18,23 +18,23 @@ function AddTodo({}) {
   };
 
   return (
-    <div class="container text-center">
-      <form class="row kg-row" onSubmit={handleaddbutton}>
-        <div class="col-6">
+    <div className="container text-center">
+      <form className="row kg-row" onSubmit={handleaddbutton}>
+        <div className="col-6">
           <input
             type="text"
             placeholder="Enter Todo Here"
             ref={todonameElement}></input>
         </div>
 
-        <div class="col-4">
+        <div className="col-4">
           <input type="date" ref={tododateElement}></input>
         </div>
 
-        <div class="col-2 ">
+        <div className="col-2 ">
           <button
             type="submit"
-            class="btn btn-success kg-button"
+            className="btn btn-success kg-button"
             // onClick={handleaddbutton}
           >
             <IoIosAddCircle />

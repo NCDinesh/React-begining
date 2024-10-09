@@ -6,7 +6,7 @@ let Individualitem = ({ indiitems, bought, handleBuyButton }) => {
   //   console.log(event);
   // };
   return (
-    <ul class="list-group">
+    <ul className="list-group">
       {indiitems.map((item) => (
         <li
           key={item}
