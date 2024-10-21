@@ -19,11 +19,13 @@ let CreatePost = () => {
     const dislikes = dislikesElement.current.value;
     const tags = tagsElement.current.value.split(" ");
 
-    // userIdElement.current.value = " ";
-    // postTitleElement.current.value = "";
-    // postBodyElement.current.value = "";
-    // reactionsElement.current.value = "";
-    // tagsElement.current.value = "";
+    userIdElement.current.value = " ";
+    postTitleElement.current.value = "";
+    postBodyElement.current.value = "";
+    likesElement.current.value = "";
+    dislikesElement.current.value = "";
+
+    tagsElement.current.value = "";
     const postReactions = {
       likes: likes,
       dislikes: dislikes,
