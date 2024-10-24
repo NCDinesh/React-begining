@@ -1,4 +1,6 @@
-let Sidebar = ({ selectedTab, setselectedTab }) => {
+import { Link } from "react-router-dom";
+
+let Sidebar = () => {
   return (
     <>
       <div
@@ -15,37 +17,26 @@ let Sidebar = ({ selectedTab, setselectedTab }) => {
         <hr />
         <ul className="nav nav-pills flex-column mb-auto">
           <li className="nav-item">
-            <a
-              href="#"
-              className={`nav-link text-white ${
-                selectedTab === "Home" && "active"
-              }`}
-              aria-current="page"
-              onClick={() => setselectedTab("Home")}>
+            <Link to="/" className="nav-link text-white" aria-current="page">
               <svg className="bi pe-none me-2" width="16" height="16">
                 <use xlinkHref="#home"></use>
               </svg>
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
-              className={`nav-link text-white ${
-                selectedTab === "Create Post" && "active"
-              }`}
-              onClick={() => setselectedTab("Create Post")}>
+            <Link to="/create-post" className="nav-link text-white">
               <svg className="bi pe-none me-2" width="16" height="16">
                 <use xlinkHref="#speedometer2"></use>
               </svg>
               Create Post
-            </a>
+            </Link>
           </li>
         </ul>
         <hr />
         <div className="dropdown">
-          <a
-            href="#"
+          <Link
+            to="#"
             className="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
             data-bs-toggle="dropdown"
             aria-expanded="false">
@@ -57,7 +48,7 @@ let Sidebar = ({ selectedTab, setselectedTab }) => {
               className="rounded-circle me-2"
             />
             <strong>mdo</strong>
-          </a>
+          </Link>
           <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
             <li>
               <a className="dropdown-item" href="#">

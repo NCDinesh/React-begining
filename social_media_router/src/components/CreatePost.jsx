@@ -1,8 +1,10 @@
 import { useContext, useRef } from "react";
 import { PostList } from "../store/post-list-store";
+import { useNavigate } from "react-router-dom";
 
 let CreatePost = () => {
   const { addPost } = useContext(PostList);
+  const navigate = useNavigate();
   const userIdElement = useRef();
   const postTitleElement = useRef();
   const postBodyElement = useRef();
@@ -19,11 +21,11 @@ let CreatePost = () => {
     const dislikes = dislikesElement.current.value;
     const tags = tagsElement.current.value.split(" ");
 
-    userIdElement.current.value = " ";
-    postTitleElement.current.value = "";
-    postBodyElement.current.value = "";
-    likesElement.current.value = "";
-    dislikesElement.current.value = "";
+    // userIdElement.current.value = " ";
+    // postTitleElement.current.value = "";
+    // postBodyElement.current.value = "";
+    // likesElement.current.value = "";
+    // dislikesElement.current.value = "";
 
     tagsElement.current.value = "";
     const postReactions = {
@@ -45,7 +47,8 @@ let CreatePost = () => {
       .then((res) => res.json())
       .then((post) => {
         console.log(post); // Log the response to verify it's correct
-        addPost(post); // Call addPost with the response data
+        addPost(post);
+        navigate("/"); // Call addPost with the response data
       })
       .catch((error) => {
         console.error("Error adding post:", error); // Handle any errors
